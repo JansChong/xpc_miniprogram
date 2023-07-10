@@ -1,0 +1,108 @@
+<!-- 顶部标签页 -->
+<view class="tab">
+    <van-tabs active="{{ active }}" line-width="56px">
+        <van-tab wx:for="{{tabs}}" wx:key="index" wx:if="{{index != 0}}" title="{{item.title}}">
+        </van-tab>
+    </van-tabs>
+</view>
+
+<!-- 轮播图 -->
+<view class="banner">
+    <swiper indicator-dots circular indicator-color="rgba(0,0,0,0.4)" indicator-active-color="#e4393c">
+        <swiper-item wx:for="{{banner}}" wx:key="idx">
+            <image src="{{item.model.cover}}" mode="widthFix" />
+        </swiper-item>
+    </swiper>
+</view>
+
+<!-- 页面主体内容 -->
+<view class="main">
+    
+    <view class="{{item.type}}" wx:for="{{recommend}}" wx:if="{{item.type != 'uiBanner' && item.type != 'uiCollectionSlideOne'}}">
+        
+        <view wx:if="{{item.type == 'uiMiddleCard'}}" >
+            <view class="top">
+                <image src="{{item.children[0].model.resource.cover}}" mode="aspectFill" />
+                <view class="count">
+                    <view class="first">
+                        <van-icon name="eye-o" />36.7w
+                    </view>
+                    <view>
+                        <van-icon name="good-job-o" />2935
+                    </view>
+                    <view>
+                        22:04
+                    </view>
+                </view> <!-- alt + shift + f  重排代码格式 -->
+            </view>
+            <view class="bottom">
+                <view class="title">{{item.children[0].model.resource.title}}</view>
+                <view class="author">
+                    <view>{{item.children[0].model.resource.author.userinfo.username}}</view>
+                    <van-icon class="ellipsis" name="ellipsis" bindtap="share" />
+                </view>
+            </view>
+        </view>
+
+        <view wx:elif="{{item.type == 'uiBigCardTop'}}">
+            <image src="https://oss-xpc0.xpccdn.com/uploadfile/article/2023/7/6/bfb48011b96966e590e74cbd28a97012" mode="aspectFill" />
+
+            <view class="content">
+
+                <view class="title">
+                    <text>望仙谷 x 美团 宣传视频</text>
+                    <view>
+                        <van-icon name="good-job-o" />
+                        <van-icon class="ellipsis" name="ellipsis" />
+                    </view>
+                </view>
+
+                <!-- 作者begin -->
+                <view class="author">
+
+                    <view class="user">
+                        <view class="avatar">
+                            <image src="https://oss-xpc0.xpccdn.com/Upload/user/2019/05/015cc96038b6bf0.jpeg" />
+                        </view>
+                        <text>侯妙</text>
+                    </view>
+
+                    <view class="follow">+ 关注</view>
+
+                </view>
+                <!-- 作者end -->
+
+            </view>
+        </view>
+
+        <view wx:else="{{item.type == 'uiBigCard'}}">
+            <!-- 作者 begin -->
+            <view class="author">
+                <view class="user">
+                    <view class="avatar">
+                        <image src="https://oss-xpc0.xpccdn.com/Upload/user/2019/05/015cc96038b6bf0.jpeg" />
+                    </view>
+                    <text>侯妙</text>
+                </view>
+                <van-icon class="ellipsis" name="ellipsis" />
+            </view>
+            <!-- 作者 end -->
+
+            <view class="title">第九届 New Vision 毕业季影像展| 征片开始啦~</view>
+
+            <image class="auto-img" src="https://oss-xpc6.xpccdn.com/default/hzy0HBXXL3P3ZMJesDLQgDCz33aASgrNGRlKVSmF.jpg" mode="widthFix" />
+
+            <view class="last">
+                立即查看
+            </view>
+        </view>
+
+    </view>
+
+</view>
+
+<!-- 分享面板 -->
+<van-share-sheet show="{{ showShare }}" title="立即分享给好友" options="{{ options }}" bind:select="onSelect" bind:close="onClose" />
+
+<!-- Toast 轻提示 -->
+<van-toast id="van-toast" />

@@ -1,0 +1,15 @@
+page{
+    background-color: #efefef;
+}
+
+/* 给image标签加的类名, 图片自适应 */
+.auto-img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 分享按钮, 旋转90deg */
+.ellipsis{
+    transform: rotate(90deg);
+}

@@ -1,0 +1,47 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/notes/notes",
+        "pages/search/search",
+        "pages/mine/mine"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#e4393c",
+        "navigationBarTitleText": "新片场App",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "selectedColor": "#e4393c",
+        "color": "#8a8a8a",
+        "list": [{
+            "pagePath": "pages/index/index",
+            "text": "首页",
+            "selectedIconPath": "./assets/icons/ac_home.png",
+            "iconPath": "./assets/icons/home.png"
+        },{
+            "pagePath": "pages/notes/notes",
+            "text": "手记",
+            "selectedIconPath": "./assets/icons/ac_notes.png",
+            "iconPath": "./assets/icons/notes.png"
+        },{
+            "pagePath": "pages/search/search",
+            "text": "搜索",
+            "selectedIconPath": "./assets/icons/ac_search.png",
+            "iconPath": "./assets/icons/search.png"
+        },{
+            "pagePath": "pages/mine/mine",
+            "text": "我的",
+            "selectedIconPath": "./assets/icons/ac_mine.png",
+            "iconPath": "./assets/icons/mine.png"
+        }]
+    },
+    "usingComponents": {
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-share-sheet": "@vant/weapp/share-sheet/index",
+        "van-toast": "@vant/weapp/toast/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}
